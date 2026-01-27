@@ -3,7 +3,7 @@
   "displayName": "String Extractor",
   "description": "Identify repeated string literals, hardcoded messages, URLs, and paths that could benefit from being extracted as constants",
   "version": "0.0.1",
-  "publisher": "string-extractor",
+  "publisher": "StringExtractor",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -18,6 +18,10 @@
     "extract",
     "hardcoded"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dotjumpdot/string-extractor"
+  },
   "activationEvents": [
     "onLanguage:javascript",
     "onLanguage:typescript",
@@ -171,10 +175,13 @@
     "@types/vscode": "^1.85.0",
     "@typescript-eslint/eslint-plugin": "^6.13.0",
     "@typescript-eslint/parser": "^6.13.0",
+    "@vscode/test-electron": "^2.3.8",
     "eslint": "^8.54.0",
     "glob": "^10.3.10",
     "mocha": "^10.2.0",
-    "typescript": "^5.3.2",
-    "@vscode/test-electron": "^2.3.8"
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "vsce": "^2.15.0"
   }
 }

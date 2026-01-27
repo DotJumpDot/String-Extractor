@@ -11,6 +11,19 @@
 
 A powerful VS Code extension that automatically identifies repeated string literals, hardcoded messages, URLs, and paths that could benefit from being extracted as constants. Perfect for improving code maintainability, preparing for internationalization, and reducing technical debt.
 
+## Extension Information
+
+| Property            | Details                            |
+| ------------------- | ---------------------------------- |
+| **Extension ID**    | `StringExtractor.string-extractor` |
+| **Publisher**       | DotJumpDot                         |
+| **Version**         | 0.0.1                              |
+| **VS Code Minimum** | 1.85.0+                            |
+| **License**         | MIT                                |
+
+[![Install](https://img.shields.io/badge/Marketplace-Install-blue.svg)](https://marketplace.visualstudio.com/items?itemName=StringExtractor.string-extractor)
+[![Extension Link](https://img.shields.io/badge/Extension-View-orange.svg)](https://marketplace.visualstudio.com/items?itemName=StringExtractor.string-extractor)
+
 </div>
 
 ---
