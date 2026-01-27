@@ -1,0 +1,180 @@
+{
+  "name": "string-extractor",
+  "displayName": "String Extractor",
+  "description": "Identify repeated string literals, hardcoded messages, URLs, and paths that could benefit from being extracted as constants",
+  "version": "0.0.1",
+  "publisher": "string-extractor",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "string",
+    "constants",
+    "refactoring",
+    "code quality",
+    "extract",
+    "hardcoded"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact",
+    "onLanguage:python",
+    "onLanguage:java",
+    "onLanguage:csharp",
+    "onLanguage:go",
+    "onLanguage:php",
+    "onLanguage:ruby"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "stringExtractor.analyzeFile",
+        "title": "Analyze File for String Literals",
+        "category": "String Extractor"
+      },
+      {
+        "command": "stringExtractor.analyzeWorkspace",
+        "title": "Analyze Workspace for String Literals",
+        "category": "String Extractor"
+      },
+      {
+        "command": "stringExtractor.toggleHighlighting",
+        "title": "Toggle String Highlighting",
+        "category": "String Extractor"
+      },
+      {
+        "command": "stringExtractor.showReport",
+        "title": "Show String Analysis Report",
+        "category": "String Extractor"
+      },
+      {
+        "command": "stringExtractor.openSettings",
+        "title": "Open Settings",
+        "category": "String Extractor"
+      },
+      {
+        "command": "stringExtractor.openKeybindings",
+        "title": "Open Keyboard Shortcuts",
+        "category": "String Extractor"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "stringExtractor.analyzeFile",
+        "key": "ctrl+alt+space",
+        "mac": "cmd+alt+space",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "String Extractor",
+      "properties": {
+        "stringExtractor.minStringLength": {
+          "type": "number",
+          "default": 5,
+          "description": "Minimum string length to consider for extraction",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "stringExtractor.minOccurrenceCount": {
+          "type": "number",
+          "default": 2,
+          "description": "Minimum occurrence count to flag a string",
+          "minimum": 2,
+          "maximum": 50
+        },
+        "stringExtractor.ignorePatterns": {
+          "type": "array",
+          "default": [
+            "^http",
+            "^https",
+            "^/",
+            "^\\./",
+            "^\\.\\./",
+            "^\\\\w+$",
+            "^\\\\d+$",
+            "^console\\.log",
+            "^throw new Error",
+            "^[\\s\\n]*$"
+          ],
+          "description": "Regex patterns to ignore (strings matching these will not be flagged)"
+        },
+        "stringExtractor.highlightDuplicates": {
+          "type": "boolean",
+          "default": true,
+          "description": "Highlight duplicate string literals in the editor"
+        },
+        "stringExtractor.highlightColor": {
+          "type": "string",
+          "default": "rgba(255, 165, 0, 0.2)",
+          "description": "Color for highlighting duplicate strings (rgba format)"
+        },
+        "stringExtractor.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show duplicate count in status bar"
+        },
+        "stringExtractor.analyzeOnFileSwitch": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically analyze files when switching between them"
+        },
+        "stringExtractor.notificationTimeout": {
+          "type": "number",
+          "default": 3000,
+          "minimum": 0,
+          "maximum": 10000,
+          "description": "Notification timeout in milliseconds (0 to disable auto-dismiss)"
+        },
+        "stringExtractor.highlightStyle": {
+          "type": "string",
+          "default": "background",
+          "enum": [
+            "background",
+            "border",
+            "underline",
+            "custom"
+          ],
+          "description": "Highlighting style for duplicate strings"
+        },
+        "stringExtractor.useCssClasses": {
+          "type": "boolean",
+          "default": false,
+          "description": "Use CSS classes instead of inline styles for highlighting"
+        },
+        "stringExtractor.noHighlightPatterns": {
+          "type": "array",
+          "default": [],
+          "description": "Regex patterns for strings to never highlight (additional to ignorePatterns)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.3.2",
+    "@vscode/test-electron": "^2.3.8"
+  }
+}
