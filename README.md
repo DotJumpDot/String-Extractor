@@ -4,7 +4,7 @@
 
 **Identify repeated string literals and improve code maintainability**
 
-[![Version](https://img.shields.io/badge/version-0.0.1-blue.svg)](https://github.com/dotjumpdot/string-extractor)
+[![Version](https://img.shields.io/badge/version-0.0.2-blue.svg)](https://github.com/dotjumpdot/string-extractor)
 [![VS Code](https://img.shields.io/badge/VS%20Code-1.85.0+-brightgreen.svg)](https://code.visualstudio.com/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Build](https://img.shields.io/badge/build-passing-success.svg)]()
