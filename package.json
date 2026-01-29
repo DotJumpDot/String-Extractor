@@ -2,8 +2,8 @@
   "name": "string-extractor",
   "displayName": "String Extractor",
   "description": "Identify repeated string literals, hardcoded messages, URLs, and paths that could benefit from being extracted as constants",
-  "version": "0.0.2",
-  "publisher": "StringExtractor",
+  "version": "1.0.0",
+  "publisher": "DotJumpDot",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.85.0"
