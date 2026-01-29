@@ -17,7 +17,7 @@ A powerful VS Code extension that automatically identifies repeated string liter
 | ------------------- | ---------------------------------- |
 | **Extension ID**    | `StringExtractor.string-extractor` |
 | **Publisher**       | DotJumpDot                         |
-| **Version**         | 0.0.2                              |
+| **Version**         | 1.0.0                              |
 | **VS Code Minimum** | 1.85.0+                            |
 | **License**         | MIT                                |
 
